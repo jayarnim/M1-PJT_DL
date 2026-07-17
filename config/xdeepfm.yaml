@@ -1,0 +1,42 @@
+# RUNTIME ==========
+seed: 42
+
+
+# MODEL ==========
+model:
+  name: xdeepfm
+  params:
+    channels: [100, 100, 100]
+    dropout: 0.2
+
+
+# PIPELINE PACKAGE ==========
+split:
+  ratio:
+    trn: 0.6
+    val: 0.2
+    tst: 0.2
+  shuffle: True
+
+dataloader:
+  batch_size: 1024
+  shuffle: True
+
+
+# TRAINER PACKAGE ==========
+num_epochs: 100
+
+early_stopping:
+  patience: 5
+  delta: 0.0001
+  warmup: 0
+
+criterion:
+  name: bce
+  params:
+
+optimizer:
+  name: adamw
+  params:
+    lr: 0.0001
+    weight_decay: 0.0001

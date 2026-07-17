@@ -1,0 +1,13 @@
+name: ctr
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11.5
+  - pip
+
+  - pip:
+      - -r requirements.txt
+      - git+https://github.com/jayarnim/pkg-ctr.git@v0.2.0
+      - huggingface_hub==1.8.0 
